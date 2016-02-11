@@ -1,4 +1,4 @@
-package strategy;
+package hashcode.strategy;
 
 import java.io.PrintWriter;
 

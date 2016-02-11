@@ -1,4 +1,6 @@
-package model;
+package hashcode.model;
+
+import hashcode.Point;
 
 import java.util.HashMap;
 import java.util.Map;

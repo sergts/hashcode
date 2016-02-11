@@ -1,7 +1,8 @@
+package hashcode;
 
-import io.InputReader;
-import model.*;
-import strategy.Strategy;
+import hashcode.io.InputReader;
+import hashcode.model.*;
+import hashcode.strategy.*;
 
 import java.io.*;
 import java.util.*;

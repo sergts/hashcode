@@ -1,4 +1,4 @@
-package io;
+package hashcode.io;
 
 import java.io.IOException;
 import java.io.InputStream;

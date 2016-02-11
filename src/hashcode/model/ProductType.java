@@ -1,4 +1,4 @@
-package model;
+package hashcode.model;
 
 public class ProductType {
 
