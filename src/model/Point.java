@@ -11,6 +11,11 @@ public class Point {
         this.col = col;
     }
 
+    public Point(Point position) {
+        this.row = position.row;
+        this.col = position.col;
+    }
+
     public static int distance(Point a, Point b) {
         double diffRow = a.row - b.row;
         double diffCol = a.col - b.col;

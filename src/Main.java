@@ -19,6 +19,7 @@ public class Main implements Runnable {
         int cols = in.nextInt();
 
         int dronesCount = in.nextInt();
+
         TURNS = in.nextInt();
         Drone.MAX_WEIGHT = in.nextInt();
 
@@ -38,6 +39,12 @@ public class Main implements Runnable {
             }
         }
         Warehouse.warehouses = warehouses;
+
+        Drone[] drones = new Drone[dronesCount];
+        for (int i = 0; i < dronesCount; i++) {
+            drones[i] = new Drone(i, new Point(warehouses[0].position));
+        }
+
 
         int orderCount = in.nextInt();
         Order[] orders = new Order[orderCount];
