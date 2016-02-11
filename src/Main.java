@@ -1,6 +1,7 @@
 
 import io.InputReader;
 import model.*;
+import strategy.Strategy;
 
 import java.io.*;
 import java.util.*;
@@ -68,6 +69,7 @@ public class Main implements Runnable {
         try {
             in = new InputReader(new FileInputStream("mother_of_all_warehouses.in"));
             out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+            Strategy.out = out;
             Locale.setDefault(Locale.US);
                 solve();
             out.close();
