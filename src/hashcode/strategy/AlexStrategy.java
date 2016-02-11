@@ -5,10 +5,8 @@ package hashcode.strategy;/*
     repo
 */
 
-import hashcode.Strategy;
-import hashcode.model.Order;
-import hashcode.model.ProductType;
-import hashcode.model.Warehouse;
+import hashcode.*;
+import hashcode.model.*;
 
 public class AlexStrategy extends Strategy {
 
