@@ -15,4 +15,9 @@ public class Load extends Command {
     this.productAmount = productAmount;
   }
 
+  @Override
+  public String toString() {
+    return droneId + " L " + warehouseId + " " + productType + " " + productAmount;
+  }
+
 }

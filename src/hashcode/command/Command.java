@@ -8,4 +8,5 @@ public abstract class Command {
   public Command(int droneId) {
     this.droneId = droneId;
   }
+  public abstract String toString();
 }

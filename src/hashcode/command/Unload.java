@@ -16,4 +16,9 @@ public class Unload extends Command {
     this.productType = productType;
     this.productAmount = productAmount;
   }
+
+  @Override
+  public String toString() {
+    return droneId + " U " + productType + " " + productAmount;
+  }
 }

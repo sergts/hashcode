@@ -11,4 +11,9 @@ public class Wait extends Command {
     super(droneId);
     this.turns = turns;
   }
+  @Override
+  public String toString() {
+    return droneId + " W " + turns;
+  }
+
 }
