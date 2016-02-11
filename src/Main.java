@@ -44,6 +44,7 @@ public class Main implements Runnable {
         for (int i = 0; i < dronesCount; i++) {
             drones[i] = new Drone(i, new Point(warehouses[0].position));
         }
+        Drone.drones = drones;
 
 
         int orderCount = in.nextInt();

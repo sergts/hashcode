@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class Drone {
 
+    public static Drone[] drones;
+
     static public int MAX_WEIGHT;
 
     public int id;
