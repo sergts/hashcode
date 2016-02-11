@@ -16,6 +16,8 @@ public class Main implements Runnable {
     public static int TURNS;
     public static int ROWS;
     public static int COLS;
+    public static StringBuilder sb = new StringBuilder();
+    public static int CommandCount = 0;
 
     public void solve() throws Exception {
         // solution goes here
@@ -64,6 +66,9 @@ public class Main implements Runnable {
         Order.orders = orders;
 
         new EduardStrategy().run();
+        //AlexStrategy alexStrategy = new AlexStrategy();
+        //alexStrategy.countForAllOrders();
+
     }
 
 

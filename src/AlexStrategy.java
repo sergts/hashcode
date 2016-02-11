@@ -6,6 +6,7 @@
 */
 
 import hashcode.Main;
+import hashcode.model.Drone;
 import hashcode.model.Order;
 import hashcode.model.ProductType;
 import hashcode.model.Warehouse;
@@ -15,6 +16,12 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class AlexStrategy extends Strategy {
+
+    public static int dronToUse = 0;
+
+    public Drone getNextDron(){
+        return Drone.drones[dronToUse++];
+    }
 
     public void countForAllOrders(){
         for (Order order : Order.orders) {
@@ -32,11 +39,20 @@ public class AlexStrategy extends Strategy {
                 return o1.time - o2.time;
             }
         });
+
+        Drone drone;
+        for (Order order: Order.orders) {
+            for (int product : order.products.keySet()){
+                drone = getNextDron();
+
+            }
+        }
     }
 
     @Override
     public void run() {
         out.print("AlexStrategy started");
     }
+
 
 }
