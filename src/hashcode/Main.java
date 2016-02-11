@@ -62,6 +62,8 @@ public class Main implements Runnable {
         }
         Order.orders = orders;
 
+        AlexStrategy alexStrategy = new AlexStrategy();
+        alexStrategy.countForAllOrders();
     }
 
 

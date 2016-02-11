@@ -5,10 +5,14 @@
     repo
 */
 
-import model.Order;
-import model.ProductType;
-import model.Warehouse;
-import strategy.Strategy;
+import hashcode.Main;
+import hashcode.model.Order;
+import hashcode.model.ProductType;
+import hashcode.model.Warehouse;
+import hashcode.strategy.Strategy;
+
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class AlexStrategy extends Strategy {
 
@@ -22,10 +26,17 @@ public class AlexStrategy extends Strategy {
             }
             order.time = distance * overalQty;
         }
+        Arrays.sort(Order.orders, new Comparator<Order>() {
+            @Override
+            public int compare(Order o1, Order o2) {
+                return o1.time - o2.time;
+            }
+        });
     }
 
     @Override
     public void run() {
         out.print("AlexStrategy started");
     }
+
 }
