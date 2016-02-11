@@ -1,6 +1,8 @@
+package hashcode;
 
-import io.InputReader;
-import model.*;
+import hashcode.io.InputReader;
+import hashcode.model.*;
+import hashcode.strategy.*;
 
 import java.io.*;
 import java.util.*;
@@ -12,13 +14,16 @@ public class Main implements Runnable {
     public PrintWriter out;
 
     public static int TURNS;
+    public static int ROWS;
+    public static int COLS;
 
     public void solve() throws Exception {
         // solution goes here
-        int rows = in.nextInt();
-        int cols = in.nextInt();
+        ROWS = in.nextInt();
+        COLS = in.nextInt();
 
         int dronesCount = in.nextInt();
+
         TURNS = in.nextInt();
         Drone.MAX_WEIGHT = in.nextInt();
 
@@ -27,6 +32,7 @@ public class Main implements Runnable {
         for (int i = 0; i < productTypeCount; i++) {
             productTypes[i] = new ProductType(i, in.nextInt());
         }
+        ProductType.productTypes = productTypes;
 
         int warehouseCount = in.nextInt();
         Warehouse[] warehouses = new Warehouse[warehouseCount];
@@ -36,6 +42,14 @@ public class Main implements Runnable {
                 warehouses[i].products[j] = in.nextInt();
             }
         }
+        Warehouse.warehouses = warehouses;
+
+        Drone[] drones = new Drone[dronesCount];
+        for (int i = 0; i < dronesCount; i++) {
+            drones[i] = new Drone(i, new Point(warehouses[0].position));
+        }
+        Drone.drones = drones;
+
 
         int orderCount = in.nextInt();
         Order[] orders = new Order[orderCount];
@@ -46,6 +60,7 @@ public class Main implements Runnable {
                 orders[i].addProduct(in.nextInt());
             }
         }
+        Order.orders = orders;
 
     }
 
@@ -55,6 +70,7 @@ public class Main implements Runnable {
         try {
             in = new InputReader(new FileInputStream("mother_of_all_warehouses.in"));
             out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+            Strategy.out = out;
             Locale.setDefault(Locale.US);
                 solve();
             out.close();

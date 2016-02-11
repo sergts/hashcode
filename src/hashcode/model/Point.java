@@ -1,4 +1,4 @@
-package model;
+package hashcode.model;
 
 public class Point {
 
@@ -11,6 +11,11 @@ public class Point {
         this.col = col;
     }
 
+    public Point(Point position) {
+        this.row = position.row;
+        this.col = position.col;
+    }
+
     public static int distance(Point a, Point b) {
         double diffRow = a.row - b.row;
         double diffCol = a.col - b.col;
@@ -19,6 +24,14 @@ public class Point {
 
     public int distanceTo(Point x) {
         return distance(this, x);
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "row=" + row +
+                ", col=" + col +
+                '}';
     }
 
     @Override
