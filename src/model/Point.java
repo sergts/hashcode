@@ -2,19 +2,19 @@ package model;
 
 public class Point {
 
-    int x, y;
+    int row, col;
 
     public Point(){}
 
-    public Point(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Point(int row, int col) {
+        this.row = row;
+        this.col = col;
     }
 
     public static double distance(Point a, Point b) {
-        double diffX = a.x - b.x;
-        double diffY = a.y - b.y;
-        return StrictMath.sqrt(diffX * diffX + diffY * diffY);
+        double diffRow = a.row - b.row;
+        double diffCol = a.col - b.col;
+        return StrictMath.sqrt(diffRow * diffRow + diffCol * diffCol);
     }
 
     public double distanceTo(Point x) {
@@ -28,15 +28,15 @@ public class Point {
 
         Point point = (Point) o;
 
-        if (x != point.x) return false;
-        return y == point.y;
+        if (row != point.row) return false;
+        return col == point.col;
 
     }
 
     @Override
     public int hashCode() {
-        int result = x;
-        result = 31 * result + y;
+        int result = row;
+        result = 31 * result + col;
         return result;
     }
 }

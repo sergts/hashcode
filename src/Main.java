@@ -1,5 +1,8 @@
 
 import io.InputReader;
+import model.Drone;
+import model.ProductType;
+import model.Warehouse;
 
 import java.io.*;
 import java.util.*;
@@ -12,6 +15,24 @@ public class Main implements Runnable {
 
     public void solve() throws Exception {
         // solution goes here
+        int rows = in.nextInt();
+        int cols = in.nextInt();
+
+        int dronesCount = in.nextInt();
+        int turns = in.nextInt();
+        Drone.MAX_WEIGHT = in.nextInt();
+
+        int productTypeCount = in.nextInt();
+        ProductType[] productTypes = new ProductType[productTypeCount];
+        for (int i = 0; i < productTypeCount; i++) {
+            productTypes[i] = new ProductType(i, in.nextInt());
+        }
+
+        int warehouseCount = in.nextInt();
+        Warehouse[] warehouses = new Warehouse[warehouseCount];
+        for (int i = 0; i < warehouseCount; i++) {
+//            warehouses[i] = new Warehouse(i, in.nextInt());
+        }
 
     }
 
@@ -22,10 +43,7 @@ public class Main implements Runnable {
             in = new InputReader(new FileInputStream("mother_of_all_warehouses.in"));
             out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
             Locale.setDefault(Locale.US);
-            int tests = 1;
-            while (tests-- > 0) {
                 solve();
-            }
             out.close();
         } catch (Throwable e) {
             e.printStackTrace();
