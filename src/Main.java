@@ -27,6 +27,7 @@ public class Main implements Runnable {
         for (int i = 0; i < productTypeCount; i++) {
             productTypes[i] = new ProductType(i, in.nextInt());
         }
+        ProductType.productTypes = productTypes;
 
         int warehouseCount = in.nextInt();
         Warehouse[] warehouses = new Warehouse[warehouseCount];
@@ -36,6 +37,7 @@ public class Main implements Runnable {
                 warehouses[i].products[j] = in.nextInt();
             }
         }
+        Warehouse.warehouses = warehouses;
 
         int orderCount = in.nextInt();
         Order[] orders = new Order[orderCount];
@@ -46,6 +48,7 @@ public class Main implements Runnable {
                 orders[i].addProduct(in.nextInt());
             }
         }
+        Order.orders = orders;
 
     }
 

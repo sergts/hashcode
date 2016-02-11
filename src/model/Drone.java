@@ -10,7 +10,7 @@ public class Drone {
     public int id;
     public Point position;
     public Map<Integer, Integer> currentProducts = new HashMap<>();
-    public int freeSpace;
+    public int freeSpace = MAX_WEIGHT;
 
     public Drone(int id) {
         this.id = id;

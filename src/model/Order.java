@@ -4,9 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Order {
-  public int id;
-  public Point point;
-  public Map<Integer, Integer> products = new HashMap<>();
+
+    public static Order[] orders;
+
+    public int id;
+    public Point point;
+    public Map<Integer, Integer> products = new HashMap<>();
 
     public Order(int id, Point point) {
         this.id = id;
