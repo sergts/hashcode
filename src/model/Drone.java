@@ -15,4 +15,14 @@ public class Drone {
     public Drone(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Drone{" +
+                "id=" + id +
+                ", position=" + position +
+                ", currentProducts=" + currentProducts +
+                ", freeSpace=" + freeSpace +
+                '}';
+    }
 }

@@ -19,4 +19,13 @@ public class Order {
     public void addProduct(int productId) {
         products.put(productId, products.getOrDefault(productId, 0) + 1);
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", point=" + point +
+                ", products=" + products +
+                '}';
+    }
 }
