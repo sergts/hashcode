@@ -1,6 +1,7 @@
 
 import io.InputReader;
 import model.Drone;
+import model.Point;
 import model.ProductType;
 import model.Warehouse;
 
@@ -31,7 +32,8 @@ public class Main implements Runnable {
         int warehouseCount = in.nextInt();
         Warehouse[] warehouses = new Warehouse[warehouseCount];
         for (int i = 0; i < warehouseCount; i++) {
-//            warehouses[i] = new Warehouse(i, in.nextInt());
+            warehouses[i] = new Warehouse(i, new Point(in.nextInt(), in.nextInt()));
+
         }
 
     }

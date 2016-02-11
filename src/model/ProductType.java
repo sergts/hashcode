@@ -2,6 +2,8 @@ package model;
 
 public class ProductType {
 
+    public static int PRODUCT_TYPE_COUNT;
+
     int id;
 
     int weight;
@@ -11,6 +13,14 @@ public class ProductType {
     public ProductType(int id, int weight) {
         this.id = id;
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductType{" +
+                "id=" + id +
+                ", weight=" + weight +
+                '}';
     }
 
     @Override
