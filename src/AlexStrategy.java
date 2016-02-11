@@ -8,8 +8,9 @@
 import model.Order;
 import model.ProductType;
 import model.Warehouse;
+import strategy.Strategy;
 
-public class AlexStrategy {
+public class AlexStrategy extends Strategy {
 
     public void countForAllOrders(){
         for (Order order : Order.orders) {
@@ -21,5 +22,10 @@ public class AlexStrategy {
             }
             order.time = distance * overalQty;
         }
+    }
+
+    @Override
+    public void run() {
+
     }
 }
