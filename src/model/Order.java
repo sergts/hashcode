@@ -9,7 +9,9 @@ public class Order {
 
     public int id;
     public Point point;
-    public Map<Integer, Integer> products = new HashMap<>();
+    public Map<Integer, Integer> products = new HashMap<Integer, Integer>();
+
+    public int time;
 
     public Order(int id, Point point) {
         this.id = id;
