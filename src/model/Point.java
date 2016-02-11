@@ -11,13 +11,13 @@ public class Point {
         this.col = col;
     }
 
-    public static double distance(Point a, Point b) {
+    public static int distance(Point a, Point b) {
         double diffRow = a.row - b.row;
         double diffCol = a.col - b.col;
-        return StrictMath.sqrt(diffRow * diffRow + diffCol * diffCol);
+        return (int) StrictMath.round(StrictMath.sqrt(diffRow * diffRow + diffCol * diffCol));
     }
 
-    public double distanceTo(Point x) {
+    public int distanceTo(Point x) {
         return distance(this, x);
     }
 
