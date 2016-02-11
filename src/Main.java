@@ -1,9 +1,6 @@
 
 import io.InputReader;
-import model.Drone;
-import model.Point;
-import model.ProductType;
-import model.Warehouse;
+import model.*;
 
 import java.io.*;
 import java.util.*;
@@ -33,7 +30,18 @@ public class Main implements Runnable {
         Warehouse[] warehouses = new Warehouse[warehouseCount];
         for (int i = 0; i < warehouseCount; i++) {
             warehouses[i] = new Warehouse(i, new Point(in.nextInt(), in.nextInt()));
+            for (int j = 0; j < ProductType.PRODUCT_TYPE_COUNT; j++) {
+                warehouses[i].products[j] = in.nextInt();
+            }
+        }
 
+        int orderCount = in.nextInt();
+        Order[] orders = new Order[orderCount];
+        for (int i = 0; i < orderCount; i++) {
+            orders[i] = new Order();
+            orders[i].point = new Point(in.nextInt(), in.nextInt());
+            int items = in.nextInt();
+            orders[i].products[in.nextInt()]++;
         }
 
     }

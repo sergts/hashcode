@@ -3,5 +3,5 @@ package model;
 public class Order {
   public int id;
   public Point point;
-  public ProductType[] products = new ProductType[ProductType.PRODUCT_TYPE_COUNT];
+  public int[] products = new int[ProductType.PRODUCT_TYPE_COUNT];
 }
