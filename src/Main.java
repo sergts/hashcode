@@ -12,11 +12,13 @@ public class Main implements Runnable {
     public PrintWriter out;
 
     public static int TURNS;
+    public static int ROWS;
+    public static int COLS;
 
     public void solve() throws Exception {
         // solution goes here
-        int rows = in.nextInt();
-        int cols = in.nextInt();
+        ROWS = in.nextInt();
+        COLS = in.nextInt();
 
         int dronesCount = in.nextInt();
 
