@@ -1,7 +1,10 @@
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Order {
   public int id;
   public Point point;
-  public int[] products = new int[ProductType.PRODUCT_TYPE_COUNT];
+  public Map<Integer, Integer> products = new HashMap<>();
 }

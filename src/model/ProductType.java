@@ -4,9 +4,11 @@ public class ProductType {
 
     public static int PRODUCT_TYPE_COUNT;
 
-    int id;
+    public static ProductType[] productTypes;
 
-    int weight;
+    public int id;
+
+    public int weight;
 
     public ProductType() {}
 
