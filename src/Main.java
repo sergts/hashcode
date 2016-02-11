@@ -11,13 +11,15 @@ public class Main implements Runnable {
     public InputReader in;
     public PrintWriter out;
 
+    public static int TURNS;
+
     public void solve() throws Exception {
         // solution goes here
         int rows = in.nextInt();
         int cols = in.nextInt();
 
         int dronesCount = in.nextInt();
-        int turns = in.nextInt();
+        TURNS = in.nextInt();
         Drone.MAX_WEIGHT = in.nextInt();
 
         int productTypeCount = in.nextInt();
@@ -38,10 +40,11 @@ public class Main implements Runnable {
         int orderCount = in.nextInt();
         Order[] orders = new Order[orderCount];
         for (int i = 0; i < orderCount; i++) {
-            orders[i] = new Order();
-            orders[i].point = new Point(in.nextInt(), in.nextInt());
+            orders[i] = new Order(i, new Point(in.nextInt(), in.nextInt()));
             int items = in.nextInt();
-            orders[i].products[in.nextInt()]++;
+            for (int j = 0; j < items; j++) {
+                orders[i].addProduct(in.nextInt());
+            }
         }
 
     }
