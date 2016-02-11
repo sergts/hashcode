@@ -28,6 +28,7 @@ public class Main implements Runnable {
         Drone.MAX_WEIGHT = in.nextInt();
 
         int productTypeCount = in.nextInt();
+        ProductType.PRODUCT_TYPE_COUNT = productTypeCount;
         ProductType[] productTypes = new ProductType[productTypeCount];
         for (int i = 0; i < productTypeCount; i++) {
             productTypes[i] = new ProductType(i, in.nextInt());
@@ -62,8 +63,6 @@ public class Main implements Runnable {
         }
         Order.orders = orders;
 
-        AlexStrategy alexStrategy = new AlexStrategy();
-        alexStrategy.countForAllOrders();
     }
 
 
