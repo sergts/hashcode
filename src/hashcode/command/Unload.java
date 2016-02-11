@@ -1,4 +1,4 @@
-package model.command;
+package hashcode.command;
 
 /**
  * @author Sergei Tsimbalist
