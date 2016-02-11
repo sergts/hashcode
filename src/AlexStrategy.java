@@ -26,6 +26,6 @@ public class AlexStrategy extends Strategy {
 
     @Override
     public void run() {
-
+        out.print("AlexStrategy started");
     }
 }
