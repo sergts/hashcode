@@ -45,6 +45,16 @@ public class Main implements Runnable {
                 warehouses[i].products[j] = in.nextInt();
             }
         }
+        Point point = warehouses[0].position;
+        Arrays.sort(warehouses, new Comparator<Warehouse>() {
+            @Override
+            public int compare(Warehouse o1, Warehouse o2) {
+                return - point.distanceTo(o1.position) + point.distanceTo(o2.position);
+            }
+        });
+        for (int i = 0; i < warehouses.length; i++){
+            warehouses[i].vid = i;
+        }
         Warehouse.warehouses = warehouses;
 
         Drone[] drones = new Drone[dronesCount];
@@ -65,9 +75,9 @@ public class Main implements Runnable {
         }
         Order.orders = orders;
 
-        new EduardStrategy().run();
-        //AlexStrategy alexStrategy = new AlexStrategy();
-        //alexStrategy.countForAllOrders();
+        //new EduardStrategy().run();
+        AlexStrategy alexStrategy = new AlexStrategy();
+        alexStrategy.countForAllOrders();
 
     }
 
@@ -75,7 +85,7 @@ public class Main implements Runnable {
 
     public void run() {
         try {
-            String filename = "mother_of_all_warehouses";
+            String filename = "redundancy";
             in = new InputReader(new FileInputStream(filename + ".in"));
             out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename + ".out"))));
             Strategy.out = out;

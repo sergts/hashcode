@@ -39,24 +39,48 @@ public class Drone {
         products.put(productId, products.get(productId) - 1);
         freeSpace += ProductType.productTypes[productId].weight; }
     public boolean Load(Warehouse warehouse, int productId, int quantity){
+        int qty = quantity;
+        int totalWeight = ProductType.productTypes[productId].weight * quantity;
+        int productQtyInWh = 0;
+        while (quantity > 0) {
+            productQtyInWh = warehouse.products[productId];
+            if (productQtyInWh >= quantity) {
+                productQtyInWh = quantity;
+                warehouse.products[productId] -= quantity;
+                quantity = 0;
+            } else {
+                if (productQtyInWh > 0) {
+                    quantity -= productQtyInWh;
+                    int time = position.distanceTo(warehouse.position) + 1;
+                    position = warehouse.position;
+                    TTL -= time;
+                    if (TTL < 0) {
+                        return false;
+                    }
+                    warehouse.products[productId] = 0;
+                    Print(id, "L", warehouse.id, productId, productQtyInWh);
+                    //return false;
+                }
+                if (Warehouse.warehouses.length == warehouse.vid + 1) {
+                    warehouse = Warehouse.warehouses[0];
+                } else {
+                    warehouse = Warehouse.warehouses[warehouse.vid + 1];
+                }
+            }
+        }
+        if (totalWeight > freeSpace){
+            return false;
+        }
         int time = position.distanceTo(warehouse.position) + 1;
         position = warehouse.position;
         TTL -= time;
         if (TTL < 0){
             return false;
         }
-        if (warehouse.products[productId] >= quantity){
-            warehouse.products[productId] -= quantity;
-        }   else {
-            return false;
-        }
-        int totalWeight = ProductType.productTypes[productId].weight * quantity;
-        if (totalWeight > freeSpace){
-            return false;
-        }
+        Print(id, "L", warehouse.id, productId, productQtyInWh);
         freeSpace -= totalWeight;
-        currentProducts.put(productId, currentProducts.getOrDefault(productId, 0) + quantity);
-        Print(id, "L", warehouse.id, productId, quantity);
+        currentProducts.put(productId, currentProducts.getOrDefault(productId, 0) + qty);
+
         return true;
     }
 

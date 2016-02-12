@@ -7,6 +7,7 @@ public class Warehouse {
     public static Warehouse[] warehouses;
 
     public int id;
+    public int vid;
     public hashcode.model.Point position;
     public int[] products = new int[hashcode.model.ProductType.PRODUCT_TYPE_COUNT];
 
